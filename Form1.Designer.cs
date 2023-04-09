@@ -35,20 +35,20 @@
             this.imageJ2 = new System.Windows.Forms.PictureBox();
             this.imageIA = new System.Windows.Forms.PictureBox();
             this.grpCouleur = new System.Windows.Forms.GroupBox();
-            this.lblJ1 = new System.Windows.Forms.Label();
-            this.lblJ2 = new System.Windows.Forms.Label();
-            this.rdoJ1J = new System.Windows.Forms.RadioButton();
-            this.rdoJ1R = new System.Windows.Forms.RadioButton();
-            this.rdoJ2R = new System.Windows.Forms.RadioButton();
-            this.rdoJ2J = new System.Windows.Forms.RadioButton();
-            this.pnlJ2 = new System.Windows.Forms.Panel();
             this.pnlJ1 = new System.Windows.Forms.Panel();
+            this.rdoJ1R = new System.Windows.Forms.RadioButton();
+            this.rdoJ1J = new System.Windows.Forms.RadioButton();
+            this.pnlJ2 = new System.Windows.Forms.Panel();
+            this.rdoJ2J = new System.Windows.Forms.RadioButton();
+            this.rdoJ2R = new System.Windows.Forms.RadioButton();
+            this.lblJ2 = new System.Windows.Forms.Label();
+            this.lblJ1 = new System.Windows.Forms.Label();
             this.grpJoueur.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageJ2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageIA)).BeginInit();
             this.grpCouleur.SuspendLayout();
-            this.pnlJ2.SuspendLayout();
             this.pnlJ1.SuspendLayout();
+            this.pnlJ2.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpJoueur
@@ -116,6 +116,7 @@
             this.imageIA.Size = new System.Drawing.Size(661, 567);
             this.imageIA.TabIndex = 3;
             this.imageIA.TabStop = false;
+            this.imageIA.Click += new System.EventHandler(this.imageIA_Click);
             // 
             // grpCouleur
             // 
@@ -130,36 +131,15 @@
             this.grpCouleur.TabStop = false;
             this.grpCouleur.Text = "Choix des couleurs";
             // 
-            // lblJ1
+            // pnlJ1
             // 
-            this.lblJ1.AutoSize = true;
-            this.lblJ1.Location = new System.Drawing.Point(33, 32);
-            this.lblJ1.Name = "lblJ1";
-            this.lblJ1.Size = new System.Drawing.Size(54, 15);
-            this.lblJ1.TabIndex = 0;
-            this.lblJ1.Text = "Joueur1 :";
-            // 
-            // lblJ2
-            // 
-            this.lblJ2.AutoSize = true;
-            this.lblJ2.Location = new System.Drawing.Point(33, 75);
-            this.lblJ2.Name = "lblJ2";
-            this.lblJ2.Size = new System.Drawing.Size(54, 15);
-            this.lblJ2.TabIndex = 1;
-            this.lblJ2.Text = "Joueur2 :";
-            this.lblJ2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // rdoJ1J
-            // 
-            this.rdoJ1J.AutoSize = true;
-            this.rdoJ1J.Location = new System.Drawing.Point(16, 4);
-            this.rdoJ1J.Name = "rdoJ1J";
-            this.rdoJ1J.Size = new System.Drawing.Size(54, 19);
-            this.rdoJ1J.TabIndex = 2;
-            this.rdoJ1J.TabStop = true;
-            this.rdoJ1J.Text = "jaune";
-            this.rdoJ1J.UseVisualStyleBackColor = true;
-            this.rdoJ1J.CheckedChanged += new System.EventHandler(this.rdoJ1J_CheckedChanged);
+            this.pnlJ1.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlJ1.Controls.Add(this.rdoJ1R);
+            this.pnlJ1.Controls.Add(this.rdoJ1J);
+            this.pnlJ1.Location = new System.Drawing.Point(177, 28);
+            this.pnlJ1.Name = "pnlJ1";
+            this.pnlJ1.Size = new System.Drawing.Size(320, 27);
+            this.pnlJ1.TabIndex = 7;
             // 
             // rdoJ1R
             // 
@@ -173,17 +153,26 @@
             this.rdoJ1R.UseVisualStyleBackColor = true;
             this.rdoJ1R.CheckedChanged += new System.EventHandler(this.rdoJ1R_CheckedChanged);
             // 
-            // rdoJ2R
+            // rdoJ1J
             // 
-            this.rdoJ2R.AutoSize = true;
-            this.rdoJ2R.Location = new System.Drawing.Point(179, 3);
-            this.rdoJ2R.Name = "rdoJ2R";
-            this.rdoJ2R.Size = new System.Drawing.Size(56, 19);
-            this.rdoJ2R.TabIndex = 4;
-            this.rdoJ2R.TabStop = true;
-            this.rdoJ2R.Text = "rouge";
-            this.rdoJ2R.UseVisualStyleBackColor = true;
-            this.rdoJ2R.CheckedChanged += new System.EventHandler(this.rdoJ2R_CheckedChanged);
+            this.rdoJ1J.AutoSize = true;
+            this.rdoJ1J.Location = new System.Drawing.Point(16, 4);
+            this.rdoJ1J.Name = "rdoJ1J";
+            this.rdoJ1J.Size = new System.Drawing.Size(54, 19);
+            this.rdoJ1J.TabIndex = 2;
+            this.rdoJ1J.TabStop = true;
+            this.rdoJ1J.Text = "jaune";
+            this.rdoJ1J.UseVisualStyleBackColor = true;
+            this.rdoJ1J.CheckedChanged += new System.EventHandler(this.rdoJ1J_CheckedChanged);
+            // 
+            // pnlJ2
+            // 
+            this.pnlJ2.Controls.Add(this.rdoJ2J);
+            this.pnlJ2.Controls.Add(this.rdoJ2R);
+            this.pnlJ2.Location = new System.Drawing.Point(177, 70);
+            this.pnlJ2.Name = "pnlJ2";
+            this.pnlJ2.Size = new System.Drawing.Size(320, 28);
+            this.pnlJ2.TabIndex = 6;
             // 
             // rdoJ2J
             // 
@@ -197,24 +186,36 @@
             this.rdoJ2J.UseVisualStyleBackColor = true;
             this.rdoJ2J.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
-            // pnlJ2
+            // rdoJ2R
             // 
-            this.pnlJ2.Controls.Add(this.rdoJ2J);
-            this.pnlJ2.Controls.Add(this.rdoJ2R);
-            this.pnlJ2.Location = new System.Drawing.Point(177, 70);
-            this.pnlJ2.Name = "pnlJ2";
-            this.pnlJ2.Size = new System.Drawing.Size(320, 28);
-            this.pnlJ2.TabIndex = 6;
+            this.rdoJ2R.AutoSize = true;
+            this.rdoJ2R.Location = new System.Drawing.Point(179, 3);
+            this.rdoJ2R.Name = "rdoJ2R";
+            this.rdoJ2R.Size = new System.Drawing.Size(56, 19);
+            this.rdoJ2R.TabIndex = 4;
+            this.rdoJ2R.TabStop = true;
+            this.rdoJ2R.Text = "rouge";
+            this.rdoJ2R.UseVisualStyleBackColor = true;
+            this.rdoJ2R.CheckedChanged += new System.EventHandler(this.rdoJ2R_CheckedChanged);
             // 
-            // pnlJ1
+            // lblJ2
             // 
-            this.pnlJ1.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlJ1.Controls.Add(this.rdoJ1R);
-            this.pnlJ1.Controls.Add(this.rdoJ1J);
-            this.pnlJ1.Location = new System.Drawing.Point(177, 28);
-            this.pnlJ1.Name = "pnlJ1";
-            this.pnlJ1.Size = new System.Drawing.Size(320, 27);
-            this.pnlJ1.TabIndex = 7;
+            this.lblJ2.AutoSize = true;
+            this.lblJ2.Location = new System.Drawing.Point(33, 75);
+            this.lblJ2.Name = "lblJ2";
+            this.lblJ2.Size = new System.Drawing.Size(54, 15);
+            this.lblJ2.TabIndex = 1;
+            this.lblJ2.Text = "Joueur2 :";
+            this.lblJ2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblJ1
+            // 
+            this.lblJ1.AutoSize = true;
+            this.lblJ1.Location = new System.Drawing.Point(33, 32);
+            this.lblJ1.Name = "lblJ1";
+            this.lblJ1.Size = new System.Drawing.Size(54, 15);
+            this.lblJ1.TabIndex = 0;
+            this.lblJ1.Text = "Joueur1 :";
             // 
             // Form1
             // 
@@ -233,10 +234,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.imageIA)).EndInit();
             this.grpCouleur.ResumeLayout(false);
             this.grpCouleur.PerformLayout();
-            this.pnlJ2.ResumeLayout(false);
-            this.pnlJ2.PerformLayout();
             this.pnlJ1.ResumeLayout(false);
             this.pnlJ1.PerformLayout();
+            this.pnlJ2.ResumeLayout(false);
+            this.pnlJ2.PerformLayout();
             this.ResumeLayout(false);
 
         }

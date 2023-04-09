@@ -83,5 +83,10 @@ namespace puissance_4
                 pnlJ2.BackColor = Color.Red;
             }
         }
+
+        private void imageIA_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
